@@ -107,7 +107,7 @@ class ChatComponent extends Component {
                     <ChatList updateChatee={this.updateChatee}/>
                    </div>
 
-                   <div className="col-sm-5" >
+                   <div className="col-sm-5">
                        <Messages showreply={this.showReply} messages={this.state.messages} user={this.state.chattingWithUser}/>
                    </div>
                    <div className="col-sm-5">
