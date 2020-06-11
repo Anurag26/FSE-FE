@@ -12,6 +12,7 @@ function App() {
         <Route path="/auth" component={AuthenticationPage} />
         <Route path="/signin" exact component={SignInComponent} />
         <Route path="/signup" exact component={SignUpComponent} />
+        <Route path="/chat" exact component={ChatComponent} />
         </BrowserRouter>
     </div>
   );

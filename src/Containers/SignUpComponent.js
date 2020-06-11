@@ -12,8 +12,17 @@ function SignUpComponent() {
     function submit() {
         let user={
             email: email,
-            password:password
+            password:password,
+            username:username
         };
+
+        fetch(`localhost:8080/prattle/rest/user/auth`,{
+            method: 'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(user)
+        });
 
     }
 
@@ -39,7 +48,7 @@ function SignUpComponent() {
                         Username </label>
                     <div className="col-sm-10">
                         <input className="form-control wbdv-field wbdv-username"
-                               id="email"
+                               id="username"
                                onChange={(e)=>setUsername(e.target.value)}
                                placeholder="username"/>
                     </div>

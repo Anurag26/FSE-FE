@@ -1,0 +1,53 @@
+/*div, body {*/
+/*    margin:0;*/
+/*    padding:0;*/
+/*    height:100%;*/
+/*}*/
+
+.chat-list{
+    height: 100%;
+    color: white;
+    padding-top: 2%;
+    background-color: #121113;
+}
+
+.individual-chat{
+    margin-bottom: 10%;
+    padding: 10%;
+    color: white;
+    background-color: #252426;
+}
+
+.message-chat-box{
+    background-color: black;
+    color: white;
+}
+
+.each-message{
+    margin-top: 5%;
+    color: white;
+}
+
+hr.vertical {
+    height:100%; /* you might need some positioning for this to work, see other questions about 100% height */
+    width:0;
+    border:1px solid white;
+}
+
+.chat{
+    padding-top: 1%;
+}
+
+.message-box{
+    height: 70vh;
+    overflow: scroll;
+}
+
+.type-message-box{
+    position: fixed;
+    left: 37%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
+
