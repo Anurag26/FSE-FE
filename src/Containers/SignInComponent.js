@@ -28,7 +28,12 @@ function SignInComponent() {
                 'Content-Type':'application/json'
             },
             body:JSON.stringify(user)
-        });
+        }).then(res=>res.json())
+            .then(user=>
+            {sessionStorage.setItem("user",user.id)
+                history.push('/chat');
+            }
+            );
 
         // fetch(`http://localhost:8080/prattle/rest/user/getAllUsers`)
         //     .then(res=>res.json())

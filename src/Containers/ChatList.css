@@ -46,6 +46,7 @@ hr.vertical {
 .replies-box{
     height: 70vh;
     overflow: scroll;
+    margin-top: 10%;
 }
 
 .type-message-box{
@@ -54,6 +55,14 @@ hr.vertical {
     bottom: 20px;
     transform: translate(-50%, -50%);
     margin: 0 auto;
+}
+
+.each-message:hover{
+    cursor: pointer;
+}
+
+.individual-chat{
+    cursor: pointer;
 }
 
 .type-reply-box{

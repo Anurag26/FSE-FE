@@ -17,7 +17,7 @@ class Replies extends Component {
                         <input type="text" className="form-control" placeholder="Reply to this thread"
                                aria-label="Recipient's username" aria-describedby="basic-addon2"/>
                         <div className="input-group-append">
-                            <button className="btn btn-primary" type="button">Send</button>
+                            <button className="btn btn-primary" type="button">Reply</button>
                         </div>
                     </div>
                 </div>

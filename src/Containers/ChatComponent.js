@@ -79,13 +79,30 @@ class ChatComponent extends Component {
                 message:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis pretium ex' +
                     ', vitae rutrum dui. Vestibulum ut dapibus ex. Curabitur.'
             }
-        ]
+        ],
+        users:[]
     }
 
-    updateChatee = (name) =>{
+    componentDidMount() {
+        let userId = sessionStorage.getItem('user');
+        fetch(`http://localhost:8080/prattle/rest/user/getAllUsers`).then(resp=>resp.json())
+            .then(users=>{
+                users.map(user=>{
+                    if(user.id!=sessionStorage.getItem('user'))
+                        this.setState(prevState=>({
+                            users:[...prevState.users,user]
+                        }))
+                })
+                // console.log(users)
+            })
+    }
+
+    updateChatee = (user) =>{
         this.setState({
-            chattingWithUser:name
+            chattingWithUser:user.name
         });
+
+        // fetch()
     }
 
     showReply = (id) =>{
@@ -104,7 +121,7 @@ class ChatComponent extends Component {
                 </div>
                <div className="row chat">
                    <div className="col-sm-2">
-                    <ChatList updateChatee={this.updateChatee}/>
+                    <ChatList users={this.state.users} updateChatee={this.updateChatee}/>
                    </div>
 
                    <div className="col-sm-5">
@@ -116,19 +133,6 @@ class ChatComponent extends Component {
                        </div>}
                    </div>
                </div>
-                <div className="row">
-                    <div className="col-sm-2"></div>
-                    <div className="col-sm-5 type-message-box">
-                        <div className="input-group mb-3">
-                            <input type="text" className="form-control" placeholder="Type a Message"
-                                   aria-label="Recipient's username" aria-describedby="basic-addon2"/>
-                                <div className="input-group-append">
-                                    <button className="btn btn-primary" type="button">Send</button>
-                                </div>
-                        </div>
-                    </div>
-                    <div className="col-sm-5"></div>
-                </div>
             </div>
         );
     }
